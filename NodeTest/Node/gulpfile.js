@@ -113,14 +113,14 @@ gulp.task('connect', function () {
     });
 });
 
-gulp.task('open', function (done) {
-    gulp.src('')
-        .pipe(gulpOpen({
-            app: browser,
-            uri: 'http://localhost:3000/app'
-        }))
-        .on('end', done);
-});
+//gulp.task('open', function (done) {
+//    gulp.src('')
+//        .pipe(gulpOpen({
+//            app: browser,
+//            uri: 'http://localhost:3000/app'
+//        }))
+//        .on('end', done);
+//});
 
 var myDevConfig = Object.create(webpackConfig);
 
@@ -138,7 +138,7 @@ gulp.task("build-js", ['fileinclude'], function(callback) {
 });
 
 //发布
-gulp.task('default', ['connect', 'fileinclude', 'md5:css', 'md5:js', 'open']);
+gulp.task('default', ['connect', 'fileinclude', 'md5:css', 'md5:js']);
 
 //开发
-gulp.task('dev', ['connect', 'copy:images', 'fileinclude', 'lessmin', 'build-js', 'watch', 'open']);
+gulp.task('dev', ['connect', 'copy:images', 'fileinclude', 'lessmin', 'build-js', 'watch']);

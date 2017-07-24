@@ -32,19 +32,34 @@ module.exports = {
         filename: "[name].js",
         chunkFilename: "[chunkhash].js"
     },
+    module: {
+        loaders: [
+        {
+            test: /\.tpl$/,
+            loader: "tmodjs-loader"
+        },
+        {
+            test: /\.json$/,
+            loader: "json-loader"
+        }
+        ]
+    },
     resolve: {
         alias: {
             jquery: srcDir + "/js/lib/jquery.min.js",
             core: srcDir + "/js/core",
             ui: srcDir + "/js/ui"
-        }
-    },
-    plugins: [
-        new CommonsChunkPlugin('common.js'),
-        new uglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-    ]
+        },
+        extensions: ['.js', '.tpl', '.less', '.json', ''],
+        root: [path.join(__dirname, 'src/js/tpl')]
+    }
+
+    //,//plugins: [
+    //    new CommonsChunkPlugin('common.js'),
+    //    new uglifyJsPlugin({
+    //        compress: {
+    //            warnings: false
+    //        }
+    //    })
+    //]
 };

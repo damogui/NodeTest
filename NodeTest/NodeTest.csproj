@@ -259,6 +259,7 @@
     <Content Include="Node\src\js\Stu.js" />
     <Content Include="Node\src\js\ui\paging.js" />
     <Content Include="Node\src\js\ui\slider.js" />
+    <Content Include="Node\template.js" />
     <Content Include="Node\webpack.config.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

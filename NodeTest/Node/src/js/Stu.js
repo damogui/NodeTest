@@ -66,27 +66,7 @@ function GetStuData(page) {
             data: JSON.stringify(json), PageIndex: page, PageSize: pageSize
         },
         success: function (data) {
-         
-            if (data.Data && data.Data.length > 0) {
-                $("#tb").html(tplTableStu(data.Data));
-                $("#Totalcount").html(data.PageSum);
-           
-                //加载学校列表
-                if (isSel != 1) {
-                 
-                }
-                isSel = 1;
-
-            }
-            else {
-
-                $("#tb").html("");
-                //<img src="../../../bundle/img/noclass.png" style="text-align:center;">
-                $("#tb").html('<tr  style="border:none;text-align:center;height:280px;"><td style="font-size: 16px;" colspan="8"><div class="data_img"><div class="big_area" style="margin-top:10px;line-height:30px;"><br/><span>暂无数据！</span></div></div></td></tr>');//清空数据
-                $("#pagination").html("");//分页控件不显示
-                $("#Totalcount").html(0);//数据设置为0
-
-            }
+            $("#tb").html(tplTableStu(data));
         }
     });
 
