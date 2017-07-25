@@ -137,6 +137,11 @@ gulp.task("build-js", ['fileinclude'], function(callback) {
     });
 });
 
+
+var requireDir = require('require-dir');
+requireDir('./gulp/task', { recurse: true });
+
+
 //发布
 gulp.task('default', ['connect', 'fileinclude', 'md5:css', 'md5:js']);
 

@@ -5,7 +5,7 @@ var arrJxd = [];//校区
 var arrBj = [];//班级
 var arrTbk = [];//同步课
 var arrEdutions = [];//教材列表
-var tplTableStu = require("../tpl/Stu.tpl");//学生列表
+var tplTableStu = require("../../tpl/Stu.tpl");//学生列表http://localhost:38081/../../tpl/Stu.tpl
 var stuGrade = 0;//年级
 var stuId = 0;//学生id
 var stuEditionId;//学生id

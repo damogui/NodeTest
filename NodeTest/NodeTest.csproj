@@ -217,6 +217,15 @@
     <Content Include="Content\Site.css" />
     <Content Include="Node\.gitignore" />
     <Content Include="Node\gulpfile.js" />
+    <Content Include="Node\gulp\config.js" />
+    <Content Include="Node\gulp\task\clean.js" />
+    <Content Include="Node\gulp\task\default.js" />
+    <Content Include="Node\gulp\task\images.js" />
+    <Content Include="Node\gulp\task\less.js" />
+    <Content Include="Node\gulp\task\rev.js" />
+    <Content Include="Node\gulp\task\ugify.js" />
+    <Content Include="Node\gulp\task\watch.js" />
+    <Content Include="Node\gulp\util\handleErrors.js" />
     <Content Include="Node\src\app\index.html" />
     <Content Include="Node\src\app\news-detail.html" />
     <Content Include="Node\src\app\news-list.html" />
@@ -261,6 +270,7 @@
     <Content Include="Node\src\js\ui\slider.js" />
     <Content Include="Node\template.js" />
     <Content Include="Node\webpack.config.js" />
+    <Content Include="ReadMe.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -328,6 +338,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Node\dist\" />
+    <Folder Include="Node\src\dep\" />
     <Folder Include="Views\Stu\" />
   </ItemGroup>
   <ItemGroup>
