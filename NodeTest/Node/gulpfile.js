@@ -19,7 +19,7 @@ var gulp = require('gulp'),
     webpack = require('webpack'),
     webpackConfig = require('./webpack.config.js'),
     connect = require('gulp-connect');
-
+var gulpsync = require('gulp-sync')(gulp);//自己添加
 var host = {
     path: 'dist/',
     port: 3000,
@@ -113,14 +113,14 @@ gulp.task('connect', function () {
     });
 });
 
-gulp.task('open', function (done) {
-    gulp.src('')
-        .pipe(gulpOpen({
-            app: browser,
-            uri: 'http://localhost:3000/app'
-        }))
-        .on('end', done);
-});
+//gulp.task('open', function (done) {
+//    gulp.src('')
+//        .pipe(gulpOpen({
+//            app: browser,
+//            uri: 'http://localhost:3000/app'
+//        }))
+//        .on('end', done);
+//});
 
 var myDevConfig = Object.create(webpackConfig);
 
@@ -137,6 +137,35 @@ gulp.task("build-js", ['fileinclude'], function(callback) {
     });
 });
 
+gulp.task('minjs', function () {
+    var min = new webpacks.optimize.UglifyJsPlugin({
+        compress: { warnings: false }, except: ['$super', '$', 'exports', 'require'], comments: false
+    })
+    webpackConfig.devtool = null;
+    webpackConfig.plugins.push(min);
+    console.log(webpackConfig.plugins)
+    webpacks(webpackConfig, function (err, stats) {
+        //console.log(stats.toString());
+        gulp.start("rev-js");
+    });
+    console.log("js ugify completed");
+
+
+});
+gulp.task('rev-js', function () {
+    //版本化扫描生成后的js，生成对应MD5文件名
+    gulp.src(path.join(config.dest, "/*/*.js"))
+        .pipe(gulp.dest(config.dest)).pipe(rev())
+        //.pipe(revFormat({  
+        //    prefix: '.',  
+        //    suffix: '.cache',
+        //    lastExt: false  
+        //}))  
+        .pipe(gulp.dest(config.dest))
+        .pipe(rev.manifest('js-rev.json'))
+        .pipe(gulp.dest(config.rev));
+});
+
 
 var requireDir = require('require-dir');
 requireDir('./gulp/task', { recurse: true });
@@ -145,5 +174,7 @@ requireDir('./gulp/task', { recurse: true });
 //发布
 gulp.task('default', ['connect', 'fileinclude', 'md5:css', 'md5:js']);
 
+gulp.task('package', gulpsync.sync(['clean', [ 'minimage', 'js', 'minjs']]));
+
 //开发
-gulp.task('dev', ['connect', 'copy:images', 'fileinclude', 'lessmin', 'build-js', 'watch']);
+gulp.task('dev', gulpsync.sync(['connect', 'copy:images', 'fileinclude', 'lessmin', 'minjs', 'build-js']));//watch

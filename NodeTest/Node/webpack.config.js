@@ -77,7 +77,8 @@ module.exports = {
         },
         extensions: ['.js', '.tpl', '.less', '.json', ''],
         root: [path.join(__dirname, 'src/js/tpl')]
-    }
+    },
+    plugins: []
 
     //,//plugins: [
     //    new CommonsChunkPlugin('common.js'),

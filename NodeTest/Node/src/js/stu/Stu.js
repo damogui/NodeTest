@@ -9,6 +9,7 @@ var tplTableStu = require("../../tpl/Stu.tpl");//学生列表http://localhost:38
 var stuGrade = 0;//年级
 var stuId = 0;//学生id
 var stuEditionId;//学生id
+var xxdfdf = 0;
 
 
 var isSel = 0;//0表示没加载下拉1表示加载（学校）
