@@ -28,7 +28,7 @@ module.exports = {
     entry: getEntry(),
     output: {
         path: path.join(__dirname, "dist/js/"),
-        publicPath: "dist/js/",
+        publicPath: "",//dist/js/
         filename: "[name].js",
         chunkFilename: "[chunkhash].js"
     },
@@ -49,6 +49,7 @@ module.exports = {
             jquery: srcDir + "/js/lib/jquery.min.js",
             core: srcDir + "/js/core",
             ui: srcDir + "/js/ui"
+           
         },
         extensions: ['.js', '.tpl', '.less', '.json', ''],
         root: [path.join(__dirname, 'src/js/tpl')]

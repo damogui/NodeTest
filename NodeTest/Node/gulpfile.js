@@ -113,14 +113,14 @@ gulp.task('connect', function () {
     });
 });
 
-//gulp.task('open', function (done) {
-//    gulp.src('')
-//        .pipe(gulpOpen({
-//            app: browser,
-//            uri: 'http://localhost:3000/app'
-//        }))
-//        .on('end', done);
-//});
+gulp.task('open', function (done) {
+    gulp.src('')
+        .pipe(gulpOpen({
+            app: browser,
+            uri: 'http://localhost:3000/app'
+        }))
+        .on('end', done);
+});
 
 var myDevConfig = Object.create(webpackConfig);
 

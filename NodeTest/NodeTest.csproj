@@ -256,7 +256,7 @@
     <Content Include="Node\src\js\main.js" />
     <Content Include="Node\src\js\news-detail.js" />
     <Content Include="Node\src\js\news-list.js" />
-    <Content Include="Node\src\js\Stu.js" />
+    <Content Include="Node\src\js\stu\Stu.js" />
     <Content Include="Node\src\js\ui\paging.js" />
     <Content Include="Node\src\js\ui\slider.js" />
     <Content Include="Node\template.js" />
@@ -328,7 +328,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Node\dist\" />
-    <Folder Include="Node\src\js\stu\" />
     <Folder Include="Views\Stu\" />
   </ItemGroup>
   <ItemGroup>
