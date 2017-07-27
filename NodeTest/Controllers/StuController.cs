@@ -25,6 +25,9 @@ namespace NodeTest.Controllers
             list.Add(new Student() { StuName = "学生1", Tel = "123" });
             list.Add(new Student() { StuName = "学生2", Tel = "124" });
             list.Add(new Student() { StuName = "学生3", Tel = "125" });
+            list.Add(new Student() { StuName = "学生4", Tel = "221" });
+            list.Add(new Student() { StuName = "学生5", Tel = "222" });
+            list.Add(new Student() { StuName = "学生6", Tel = "223" });
             JsonResult json = new JsonResult();
             json.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
             json.Data = list;

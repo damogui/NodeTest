@@ -35,9 +35,9 @@ function getEntry() {
 
         }
         else {
-            console.log("打印:"+name);
+            //console.log("打印:"+name);
             var n = name.slice(name.lastIndexOf('/js/') + 4, name.length - 3);
-            console.log("截取:" + n);
+            //console.log("截取:" + n);
             entry[n] = name;
         }
     });

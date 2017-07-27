@@ -18,7 +18,11 @@ var gulp = require('gulp'),
     base64 = require('gulp-css-base64'),
     webpack = require('webpack'),
     webpackConfig = require('./webpack.config.js'),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+     path = require('path')
+
+;
+
 var gulpsync = require('gulp-sync')(gulp);//自己添加
 var host = {
     path: 'dist/',
@@ -31,6 +35,12 @@ var browser = os.platform() === 'linux' ? 'Google chrome' : (
   os.platform() === 'darwin' ? 'Google chrome' : (
   os.platform() === 'win32' ? 'chrome' : 'firefox'));
 var pkg = require('./package.json');
+
+
+//var net = require("net");
+
+//net.server.address();
+
 
 //将图片拷贝到目标目录
 gulp.task('copy:images', function (done) {
