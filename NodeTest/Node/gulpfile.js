@@ -187,4 +187,4 @@ gulp.task('default', ['connect', 'fileinclude', 'md5:css', 'md5:js']);
 gulp.task('package', gulpsync.sync(['clean', [ 'minimage', 'js', 'minjs']]));
 
 //开发
-gulp.task('dev', gulpsync.sync(['connect', 'copy:images', 'fileinclude', 'lessmin', 'minjs', 'build-js']));//watch
+gulp.task('dev', gulpsync.sync(['copy:images', 'fileinclude', 'lessmin', 'build-js', 'watch']));//watch  , 'build-js'   minjs

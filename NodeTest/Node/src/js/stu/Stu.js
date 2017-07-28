@@ -53,7 +53,7 @@ $(function () {
 
 //发送请求调取数据
 function GetStuData(page) {
-   
+    debugger;
     if (page == undefined) {
         page = 1;
     }
