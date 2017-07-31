@@ -24,23 +24,6 @@ var gulp = require('gulp'),
 ;
 
 var gulpsync = require('gulp-sync')(gulp);//自己添加
-var host = {
-    path: 'dist/',
-    port: 3000,
-    html: 'index.html'
-};
-
-//mac chrome: "Google chrome", 
-var browser = os.platform() === 'linux' ? 'Google chrome' : (
-  os.platform() === 'darwin' ? 'Google chrome' : (
-  os.platform() === 'win32' ? 'chrome' : 'firefox'));
-var pkg = require('./package.json');
-
-
-//var net = require("net");
-
-//net.server.address();
-
 
 //将图片拷贝到目标目录
 gulp.task('copy:images', function (done) {
